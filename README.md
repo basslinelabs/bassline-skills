@@ -30,6 +30,10 @@ git clone https://github.com/basslinelabs/bassline-skills.git
 cp -R bassline-skills/skills/bassline ~/.claude/skills/bassline
 ```
 
+### Grok Bot
+
+Follow [grok-bot/SETUP.md](grok-bot/SETUP.md). It is one message that makes the bot, connects the Bassline MCP and installs this skill.
+
 ### Claude desktop or claude.ai
 
 ```bash
