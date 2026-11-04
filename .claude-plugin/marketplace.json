@@ -1,0 +1,16 @@
+{
+  "name": "bassline",
+  "owner": {
+    "name": "Bassline Labs"
+  },
+  "metadata": {
+    "description": "Bassline skills for making static ads with the Bassline MCP."
+  },
+  "plugins": [
+    {
+      "name": "bassline",
+      "source": "./",
+      "description": "Turn inspiration ads into on-brand static ads for your product with the Bassline MCP."
+    }
+  ]
+}
