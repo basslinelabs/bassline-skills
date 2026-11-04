@@ -9,6 +9,11 @@ fi
 if grep -rn $'—\|–' skills README.md .claude-plugin; then
   echo "FAIL: long dash found. Use a period, comma, colon or hyphen."; fail=1
 fi
+# Private names (clients, people) live outside the repo so the list itself is never published.
+blocked="${BASSLINE_BLOCKED_WORDS:-$HOME/.config/bassline-skills/blocked-words.txt}"
+if [ -f "$blocked" ] && grep -rniFf "$blocked" skills README.md .claude-plugin; then
+  echo "FAIL: private name found. Use a generic example."; fail=1
+fi
 for f in skills/*/SKILL.md; do
   d=$(dirname "$f")
   for l in $(grep -ohE "\]\((reference/[a-z-]+\.md)\)" "$f" | sed -E 's/.*\((.*)\)/\1/'); do
