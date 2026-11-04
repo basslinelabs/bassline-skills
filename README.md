@@ -63,9 +63,9 @@ Type `/bassline` with no mode to see the menu. Or name a mode:
 Examples:
 
 ```text
-/bassline curate Surfing Cow summer launch
+/bassline curate summer launch ads for my moisturizer
 /bassline adapt
-/bassline run evergreen ads for the sun balm
+/bassline run evergreen ads for my best seller
 ```
 
 ## How it keeps you in control
