@@ -1,9 +1,9 @@
 ---
 name: bassline
-description: Use when the user wants to make static ads with Bassline through the Bassline MCP or the planning flow. One skill with modes for setup (onboard, research, rules), finding inspiration (curate, analyze), planning (message, plan, adapt), making (generate, sizes), checking (qa, review), learning (recipe, status) and the full flow (run). Covers turning saved inspiration ads into ads for the user's own product, with a before and after adaptation card the user approves before any paid run. Not for video, websites or ad account management.
+description: Use when the user wants to make static ads with Bassline through the Bassline MCP or the planning flow. One skill with modes for setup (setup, onboard, research, rules), finding inspiration (curate, analyze), planning (message, plan, adapt), making (generate, sizes), checking (qa, review), learning (recipe, status) and the full flow (run). Covers turning saved inspiration ads into ads for the user's own product, with a before and after adaptation card the user approves before any paid run. Not for video, websites or ad account management.
 user-invocable: true
 user_invocable: true
-argument-hint: "[onboard|research|rules · curate|analyze · message|plan|adapt · generate|sizes · qa|review · recipe|status · run] [target]"
+argument-hint: "[setup · onboard|research|rules · curate|analyze · message|plan|adapt · generate|sizes · qa|review · recipe|status · run] [target]"
 ---
 
 Turns inspiration ads into on-brand static ads for the user's product. Every step is visible, every paid step waits for a yes, and the user always picks the winners.
@@ -46,6 +46,7 @@ Apply in every mode.
 
 | Mode | Group | What it does | Reference |
 |---|---|---|---|
+| `setup` | Set up | First run: check the connection, confirm the brand, make one ad step by step | [reference/setup.md](reference/setup.md) |
 | `onboard [brand url]` | Set up | Add a brand and its products | [reference/onboard.md](reference/onboard.md) |
 | `research [brand]` | Set up | Approve, reject or hold audience insights | [reference/research.md](reference/research.md) |
 | `rules [ad]` | Set up | Turn review notes into brand rules | [reference/rules.md](reference/rules.md) |
@@ -64,9 +65,10 @@ Apply in every mode.
 
 ### Routing rules
 
-1. **No argument:** run Setup step 1, then show the mode table above grouped by group, with one line each. Below it, suggest the one mode that fits the workspace now (for example `onboard` when there is no brand, `curate` when there is a brand and no collection). Ask what they want to do.
+1. **No argument:** run Setup step 1, then show the mode table above grouped by group, with one line each. Below it, suggest the one mode that fits the workspace now (for example `setup` when this is their first ad, `onboard` when there is no brand, `curate` when there is a brand and no collection). Ask what they want to do.
 2. **First word is a mode:** load its reference and run it. Pass the rest of the argument as its target.
-3. **First word is not a mode:** treat the whole argument as a request. Pick the closest mode, say which one in one line, and run it. When the request covers several steps, use `run`.
+3. **Not connected:** when the Bassline tools are missing or `get_started` fails, run `setup`. It tells the user how to connect.
+4. **First word is not a mode:** treat the whole argument as a request. Pick the closest mode, say which one in one line, and run it. When the request covers several steps, use `run`.
 
 ### Mode handoffs
 
