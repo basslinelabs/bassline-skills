@@ -1,12 +1,14 @@
 ---
 name: bassline
-description: Use when the user wants to make static ads with Bassline through the Bassline MCP or the planning flow. One skill with modes for setup (setup, onboard, research, rules), finding inspiration (curate, analyze), planning (message, plan, adapt), making (generate, sizes), checking (qa, review), learning (recipe, status) and the full flow (run). Covers turning saved inspiration ads into ads for the user's own product, with a before and after adaptation card the user approves before any paid run. Not for video, websites or ad account management.
+description: Use when the user wants to make static ads with Bassline through the Bassline MCP or the planning flow. One skill with modes for setup (setup, onboard, research, rules), finding inspiration (curate, analyze), planning (message, plan, adapt), making (generate, sizes), checking (qa, review), learning (recipe, status) and the full flow (run). Covers turning saved inspiration ads into ads for the user's own product, with a before and after adaptation card the user approves before any paid run. Use editor for existing Bassline videos, hook options and package review. Not for websites or ad account management.
 user-invocable: true
 user_invocable: true
-argument-hint: "[setup · onboard|research|rules · curate|analyze · message|plan|adapt · generate|sizes · qa|review · recipe|status · run] [target]"
+argument-hint: "[setup · onboard|research|rules · curate|analyze · message|plan|adapt · generate|sizes · qa|review · recipe|status · run · editor] [target]"
 ---
 
 Turns inspiration ads into on-brand static ads for the user's product. Every step is visible, every paid step waits for a yes, and the user always picks the winners.
+
+For `/bassline editor [workspace, brand or video]` or a request to review an existing Bassline video, load [reference/editor.md](reference/editor.md) and follow its video workflow. It defines its own setup and tool discovery. Use the setup and tool map below for the static ad modes.
 
 ## Setup (non-optional)
 
@@ -61,6 +63,7 @@ Apply in every mode.
 | `review [ads]` | Check | Compare versions, give verdicts and fix notes | [reference/review.md](reference/review.md) |
 | `recipe [ad]` | Learn | Save an approved adaptation to use again | [reference/recipe.md](reference/recipe.md) |
 | `status` | Learn | What is running, what waits on the user, spend | [reference/status.md](reference/status.md) |
+| `editor [workspace, brand or video]` | Video | Browse clips and prepare a posting package for export | [reference/editor.md](reference/editor.md) |
 | `run [goal]` | All | Full flow, stopping at every gate | [reference/run.md](reference/run.md) |
 
 ### Routing rules

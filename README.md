@@ -2,6 +2,8 @@
 
 Make static ads with Bassline from your AI assistant. One skill, `/bassline`, with a mode for each step: find inspiration, pick a message, see each ad before and after, make it, check it and keep what works.
 
+Use `/bassline editor` to browse existing Bassline videos, compare hook options and prepare a posting package for export. Add a workspace, brand or video name to start there.
+
 ## Before you start
 
 You need a Bassline account and a brand you can use. Then connect the Bassline MCP in your AI app:
